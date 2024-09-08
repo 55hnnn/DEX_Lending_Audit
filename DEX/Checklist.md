@@ -1,0 +1,39 @@
+# DEX
+- AddLiquidity
+	- testAddLiquidity1()
+		- 공급 두번 하기
+	- testAddLiquidity2()
+		- 공급 두번 하기
+	- testAddLiquidity3()
+		- 공급 하고, 미니멈 토큰 설정하기
+	- testAddLiquidity4()
+		- 공급하고, 비율 다르게 다시 공급하기
+		- 실패하거나, 유동성 lp 토큰을 똑같이 받아야 함
+		- 비율대로 받거나 받지 말아야 함
+	- testAddLiquidity5()
+		- 100 ether 갖고있는 유저가 그 이상을 addliquidity하려는 것
+	- testAddLiquidity6()
+		- 맨 처음 유동성 공급할때 0이 섞여있으면 안됨
+	- testAddLiquidity7()
+		- addliquidity가 아닌 transfer 함수로 토큰을 넣었을때 lp토큰이 어떻게 반영되는지 확인
+		- token transfer에 따라 비율을 조절할 수 있다
+- RemoveLiquidity
+	- testRemoveLiquidity1()
+		- 넣은 돈만큼 lp를 돌려주는지
+	- testRemoveLiquidity2()
+		- minToken으로 무리한 금액을 요구하는지
+	- testRemoveLiquidity3()
+		- 보유한 LP토큰 이상으로 요구하는지
+	- testRemoveLiquidity4()
+		- 스왑을 100번하고 removeLiquidity를 했을때 lp토큰의 비율대로 토큰을 반환해주는지
+		- lptoken은 단순히 예치금액의 비율을 반영함
+- Swap
+	- testSwap1()
+		- (x->y) 스왑을 잘 해주는지
+	- testSwap2()
+		- (y->x) 스왑을 잘 해주는지
+	- testSwap3()
+		- 적절하게 스왑을 시도했는지
+		- 여기서 tokenX나 tokenY중 하나는 0이어야 한다.
+	- testSwap4()
+		- 올바른 minOuput을 반영하는지
